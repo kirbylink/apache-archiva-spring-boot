@@ -1,0 +1,14 @@
+### INTEGRATIONTEST ###
+spring.config.activate.on-profile: integrationtest
+spring.jpa.hibernate.ddl-auto: none
+spring.sql.init.mode: always
+spring.main.allow-bean-definition-overriding: true
+
+server.servlet.context-path: /some-non-existing-path
+
+apache-archiva:
+  configuration:
+    db:
+      username: sa
+      password:
+      url: jdbc:derby:memory:users;create=true

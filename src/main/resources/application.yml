@@ -1,0 +1,27 @@
+### DEFAULT ###
+server.servlet.context-path: /some-non-existing-path
+
+apache-archiva:
+  configuration:
+    db:
+      username: sa
+      password:
+
+---
+### LOCAL ###
+spring.config.activate.on-profile: local
+
+apache-archiva:
+  configuration:
+    db:
+      url: jdbc:derby:memory:users;create=true
+
+---
+### PROD ###
+spring.config.activate.on-profile: prod
+
+apache-archiva:
+  configuration:
+    path: /opt/archiva/webapp/archiva-webapp.war
+    db:
+      url: jdbc:derby:directory:/opt/archiva/data/database/users;create=true
