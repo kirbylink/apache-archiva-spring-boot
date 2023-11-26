@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.5] - 2023-11-26
+- Updated `spring-boot-starter-parent` to version 2.7.18
+
 ## [1.1.4] - 2023-11-11
 - Updated `spring-boot-starter-parent` to version 2.7.17
 
