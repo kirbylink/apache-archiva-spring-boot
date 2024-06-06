@@ -1,6 +1,15 @@
 # Apache Archiva Spring Boot application
 
-This is a Spring Boot application that runs a Apache Archiva War file.
+This is a Spring Boot application that runs an Apache Archiva War file.
+
+## Project Status: Archived
+
+**Important Notice:** This project has been archived and is no longer maintained. Due to the following reasons, development has been discontinued:
+- Apache Archiva has been archived and is no longer actively developed.
+- Newer versions of Spring Boot require Java 17 or higher, while Apache Archiva only supports Java 8.
+- Significant changes in the Java ecosystem, such as the transition from `javax` to `jakarta` packages, would require extensive modifications to update Apache Archiva, which is not feasible given its complex structure.
+
+As a result, this repository will no longer receive updates or new releases.
 
 Table of contents:
 - [General](#general)
@@ -10,30 +19,30 @@ Table of contents:
   - [Optional parameters](#optional-parameters)
 
 ## General
-Apache Archiva™ is an extensible repository management software that helps taking care of your own personal or enterprise-wide build artifact repository. It is the perfect companion for build tools such as Maven, Continuum, and ANT.<br /> 
-Apache [offers](https://archiva.apache.org/download.cgi) standalone binaries for several operating systems, but not for ARM architecture. Besides binaries Apache provides also Web Application Archive (WAR) files that can be used in Java-Servlet applications.<br />
-Since Spring Boot brings its own Tomcat server, it is easier to run and to configure. Unfortunately there are only a few entries when you try to search how to get a war file running with Spring Boot. Most tutorials shows, how to convert a Spring Boot application to war.<br />
-This repository contains a minimal setup with Spring Boot that needs at least one argument that points to the local stored Apache Archiva war file and Archiva needs also two environment arguments that points to a folder for Tomcat CATALINA.<br />
+Apache Archiva™ is an extensible repository management software that helps take care of your own personal or enterprise-wide build artifact repository. It is the perfect companion for build tools such as Maven, Continuum, and ANT.<br /> 
+Apache [offers](https://archiva.apache.org/download.cgi) standalone binaries for several operating systems, but not for ARM architecture. Besides binaries, Apache provides also Web Application Archive (WAR) files that can be used in Java-Servlet applications.<br />
+Since Spring Boot brings its own Tomcat server, it is easier to run and to configure. Unfortunately, there are only a few entries when you try to search how to get a WAR file running with Spring Boot. Most tutorials show how to convert a Spring Boot application to WAR.<br />
+This repository contains a minimal setup with Spring Boot that needs at least one argument that points to the locally stored Apache Archiva WAR file, and Archiva needs also two environment arguments that point to a folder for Tomcat CATALINA.<br />
 <br />
-Sources that helped to create a running Spring Boot application with an external war file:
-- [How to deploy war files to Spring Boot Embedded Tomcat](https://www.vojtechruzicka.com/spring-boot-add-war-to-embedded-tomcat/)
+Sources that helped to create a running Spring Boot application with an external WAR file:
+- [How to deploy WAR files to Spring Boot Embedded Tomcat](https://www.vojtechruzicka.com/spring-boot-add-war-to-embedded-tomcat/)
 - [The Build Artifact Repository Manager](https://archiva.apache.org/index.html)
 
 ## Requirements
 - Java Runtime Environment (JRE) 8
-- Apache Archiva war file (tested with version [2.2.10](http://www.apache.org/dist/archiva/2.2.10/binaries/apache-archiva-2.2.10.war)).
+- Apache Archiva WAR file (tested with version [2.2.10](http://www.apache.org/dist/archiva/2.2.10/binaries/apache-archiva-2.2.10.war)).
 - Maven
 - Git (optional)
 
 ## How to build
 ### Docker image
 See [Dockerfile](./Dockerfile) or [Dockerfile-alpine](./Dockerfile-alpine)
-Note: The Apache Archiva WAR file must be in the root folder and called webapp.war
+Note: The Apache Archiva WAR file must be in the root folder and called `webapp.war`.
 
 ### Local installation
 - Download or build the newest Apache Archiva WAR file (tested with version [2.2.10](http://www.apache.org/dist/archiva/2.2.10/binaries/apache-archiva-2.2.10.war))
 - Run `mvn verify -Dapache-archiva.configuration.path=/path/to/apache-archiva.war/file` or `mvn package` (skips test)
-- The Spring Boot jar file can be found under `target/apache-archiva-spring-boot-<version>.jar`
+- The Spring Boot JAR file can be found under `target/apache-archiva-spring-boot-<version>.jar`
 - Run the application (See next section)
 
 ## How to start
